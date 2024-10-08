@@ -4,6 +4,8 @@
 ### Date: October 2024
 ### Affiliation: Department of Animal Production, Cairo University, Faculty of Agriculture 
 
+# This repository contains code originally inspired by a MATLAB function created by Felix Fernando González-Navarro (2024), which converts a non-positive definite symmetric matrix to a positive definite symmetric matrix. The original MATLAB version can be found on MATLAB Central File Exchange, retrieved on October 8, 2024. This version has been adapted for use in SAS
+
 
 ## Overview
 
