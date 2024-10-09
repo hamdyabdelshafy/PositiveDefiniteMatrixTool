@@ -44,35 +44,30 @@ The function checks for non-positive eigenvalues and replaces them with a small 
 ```sas
 proc iml;
 start topdm(sig);
-    EPS = 1E-6;   /* Set the value to place instead of zero or negative eigenvalues */
-    ZERO = 1E-10; /* Set the value to look for */
+  /* Set a small value to replace zero or negative eigenvalues */
+    EPS = 1E-6;   /* Set the value to replace zero or negative eigenvalues */
+    ZERO = 1E-10; /* Threshold for detecting non-positive eigenvalues */
 
     /* Calculate eigenvalues and eigenvectors */
-    eig = eigen(sig);
+    call eigen(values, vectors, sig);
 
-    /* Check if any eigenvalues are <= ZERO */
-    if (any(eig[, 1] <= ZERO) ) then do; 
-        d = eig[, 1];      /* Extract eigenvalues */
-        v = eig[, 2];      /* Extract eigenvectors */
+    /* If any eigenvalues are <= ZERO, replace them with EPS */
+    do i = 1 to nrow(values);
+        if values[i] <= ZERO then values[i] = EPS;
+    end;
 
-        /* Replace negative or zero eigenvalues with EPS */
-        d[d <= ZERO] = EPS; 
-        
-        /* Recompose the matrix */
-        sigma = v * diag(d) * t(v); 
-    end;
-    else do;
-        sigma = sig; /* If already positive definite, return the original matrix */
-    end;
+    /* Recompose the matrix using updated eigenvalues */
+    sigma = vectors * diag(values) * t(vectors);
 
     return(sigma);
 finish;
 
 /* Example usage: */
 sig = {1 2, 2 1}; /* Non-positive definite matrix example */
-positive_definite_matrix = topdm(sig);
-print positive_definite_matrix;
+positive_definite_matrix = topdm(sig); /* Call the function with the example matrix */
+print positive_definite_matrix; /* Print the resulting positive definite matrix */
 quit;
+
 ```
 
 ## Requirements
