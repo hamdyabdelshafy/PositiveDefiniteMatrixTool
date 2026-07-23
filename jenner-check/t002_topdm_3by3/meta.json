@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_topdm_3by3",
+  "source_file": "nonPositiveMatrix_3by3.sas",
+  "source_blob_sha": "819368e7d690350fc53cca17f8c4585261f348cf",
+  "source_commit": "07bc293405be7fb64355d4e004fadfbf0c92fb6a",
+  "notes": "PROC IML topdm() \u2014 eigen-decomposes the 3x3 example matrix {1 2 3, 2 1 2, 3 2 1}, floors non-positive eigenvalues at EPS (1E-6), and recomposes a positive-definite matrix. Byte-identical copy of upstream; inline matrix literal, no data files, no edits."
+}

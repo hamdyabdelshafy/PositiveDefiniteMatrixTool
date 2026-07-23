@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_topdm_4by4",
+  "source_file": "nonPositiveMatrix_4by4.sas",
+  "source_blob_sha": "1ad58d3efd299679133a32aa29bd944937ee849e",
+  "source_commit": "07bc293405be7fb64355d4e004fadfbf0c92fb6a",
+  "notes": "PROC IML topdm() \u2014 eigen-decomposes the 4x4 example matrix {1 2 3 4, 2 1 2 3, 3 2 1 2, 4 3 2 1}, floors non-positive eigenvalues at EPS (1E-6), and recomposes a positive-definite matrix. Byte-identical copy of upstream; inline matrix literal, no data files, no edits."
+}
