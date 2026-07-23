@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_topdm_2by2",
+  "source_file": "nonPositiveMatrix_2by2.sas",
+  "source_blob_sha": "7950fb96cf1d944241de9fff164593afa5030984",
+  "source_commit": "07bc293405be7fb64355d4e004fadfbf0c92fb6a",
+  "notes": "PROC IML topdm() \u2014 eigen-decomposes the 2x2 example matrix {1 2, 2 1}, floors non-positive eigenvalues at EPS (1E-6), and recomposes a positive-definite matrix. Byte-identical copy of upstream; inline matrix literal, no data files, no edits."
+}
